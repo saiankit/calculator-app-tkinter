@@ -2,6 +2,7 @@
 from tkinter import *
 import math
 answerLabelGlobal = ""
+answerLabelForSquareRoot = ""
 #Creating the application's main window
 root = Tk() 
 root.config(background = "white")
@@ -11,14 +12,21 @@ answerFinalLabel = StringVar()
 def changeAnswerLabel(entry):
     global answerLabelGlobal
     answerLabelGlobal = answerLabelGlobal + str(entry)
+    answerLabelForSquareRoot = answerLabelGlobal
     answerEntryLabel.set(answerLabelGlobal)
 def clearAnswerLabel():
     global answerLabelGlobal
+    global answerLabelForSquareRoot
+    answerLabelForSquareRoot = eval(answerLabelGlobal)
     answerLabelGlobal = ""
     answerEntryLabel.set(answerLabelGlobal)
 def changeAnswerLabelToSquareRoot():
     global answerLabelGlobal
-    sqrta = math.sqrt(eval(answerLabelGlobal))
+    global answerLabelForSquareRoot
+    try:
+        sqrta = math.sqrt(eval(str(answerLabelForSquareRoot)))
+    except(ValueError,SyntaxError,TypeError, ZeroDivisionError):
+        sqrta = math.sqrt(eval(str(answerLabelGlobal)))
     answerEntryLabel.set("")
     answerFinalLabel.set(sqrta)
 def calc():
@@ -33,7 +41,9 @@ def calc():
         answerFinalLabel.set("Error!")
 def cls():
     global answerLabelGlobal
+    global answerLabelForSquareRoot
     answerLabelGlobal = ""
+    answerLabelForSquareRoot = ""
     answerEntryLabel.set("")
     answerFinalLabel.set("")
 def createButton(txt,x,y):
