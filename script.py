@@ -75,16 +75,15 @@ def createButton(txt,x,y):#Function used to create a button.
 
 ###Buttons###
 #buttons list stores the button values to be incoroporated in the calculator for first 4 rows
-buttons = ['AC','sqrt','%','/','7','8','9','*','4','5','6','-','1','2','3','+']
+buttons = ['AC','√','%','/','7','8','9','*','4','5','6','-','1','2','3','+','','','.','']
 buttonsListTraversalCounter = 0 #buttonsListTraversalCounter is used to traverse across the buttons list  
-for i in range(3,7):
+for i in range(3,8):
     for j in range(0,4):
         createButton(buttons[buttonsListTraversalCounter],i,j)
         buttonsListTraversalCounter = buttonsListTraversalCounter + 1
-Button(root,font=('futura', 15, 'bold'),padx=16,pady=16, text = "sqrt", command = lambda:evaluateSquareRoot(),height=2, width=9).grid(row = 3 , column = 1, sticky = E)#Button for SquareRoot
+Button(root,font=('futura', 15, 'bold'),padx=16,pady=16, text = "√", command = lambda:evaluateSquareRoot(),height=2, width=9).grid(row = 3 , column = 1, sticky = E)#Button for SquareRoot
 Button(root,font=('futura', 15, 'bold'),padx=16,pady=16, text = "AC", command = lambda:allClear(),height=2, width=9).grid(row = 3 , column = 0 , sticky = E)#Button for AC button - clear the workspace
 Button(root,font=('futura', 15, 'bold'),padx=16,pady=16, text = "0", command = lambda:changeAnswerEntryLabel(0),height=2, width=21).grid(row = 7 , column = 0 , columnspan=2 , sticky = E)#Button for value 0
-Button(root,font=('futura', 15, 'bold'),padx=16,pady=16, text = ".", command = lambda:changeAnswerEntryLabel("."),height=2, width=9).grid(row = 7 , column = 2, sticky = E)#Button for "."
 Button(root,font=('futura', 15, 'bold'),padx=16,pady=16, text = "=", command = lambda:evaluateAnswer(),height=2, width=9).grid(row = 7 , column = 3, sticky = E)#Button for "=" - final calc button  
 #############
 
