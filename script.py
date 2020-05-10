@@ -74,7 +74,7 @@ def createButton(txt,x,y):#Function used to create a button.
     Button(root,font=('futura', 15, 'bold'),padx=16,pady=16,text = str(txt), command = lambda:changeAnswerEntryLabel(txt),height = 2, width=9).grid(row = x , column = y, sticky = E)
 
 ###Buttons###
-#buttons list stores the button values to be incoroporated in the calculator for first 4 rows
+#buttons list stores the button values to be incoroporated in the calculator for first 5 rows
 buttons = ['AC','√','%','/','7','8','9','*','4','5','6','-','1','2','3','+','','','.','']
 buttonsListTraversalCounter = 0 #buttonsListTraversalCounter is used to traverse across the buttons list  
 for i in range(3,8):
