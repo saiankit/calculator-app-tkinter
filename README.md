@@ -1,6 +1,6 @@
 ##  Calculator App
 ###  A python  **GUI** Calculator app using *Tkinter* library
-![Calculator App](../assets/ss.png)
+![Calculator App](./assets/ss.png)
 
 # How to Run the App ?
 
